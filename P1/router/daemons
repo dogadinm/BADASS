@@ -1,0 +1,15 @@
+# Required routing services. FRR also starts zebra, mgmtd and staticd.
+bgpd=yes
+ospfd=yes
+isisd=yes
+
+# Load the integrated configuration after the daemons start.
+vtysh_enable=yes
+
+# Management VTY listeners are restricted to loopback inside the container.
+zebra_options="-A 127.0.0.1 -s 90000000"
+mgmtd_options="-A 127.0.0.1"
+staticd_options="-A 127.0.0.1"
+bgpd_options="-A 127.0.0.1"
+ospfd_options="-A 127.0.0.1"
+isisd_options="-A 127.0.0.1"
