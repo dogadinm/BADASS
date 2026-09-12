@@ -7,6 +7,8 @@ LOCAL_VTEP=10.0.0.2
 REMOTE_VTEP=10.0.0.1
 
 ip link set "$UNDERLAY_IF" up
+# Match the host/access MTU to VXLAN over a 1500-byte underlay.
+ip link set "$ACCESS_IF" mtu 1450
 ip link set "$ACCESS_IF" up
 ip addr flush dev "$UNDERLAY_IF" || true
 ip addr add ${LOCAL_VTEP}/24 dev "$UNDERLAY_IF"
