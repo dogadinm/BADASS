@@ -226,3 +226,19 @@ pipx install 'gns3-server==2.2.55'
 pipx install 'gns3-gui==2.2.55'
 pipx inject gns3-gui 'gns3-server==2.2.55' PyQt6
 gns3server --version
+
+
+sudo apt update
+sudo apt install git build-essential cmake libpcap-dev libelf-dev libcap2-bin
+
+mkdir -p ~/gns3-build
+cd ~/gns3-build
+
+git clone --depth 1 --branch v0.9.19 https://github.com/GNS3/ubridge.git
+make -C ubridge
+sudo make -C ubridge install
+
+git clone --depth 1 --branch v0.2.23 https://github.com/GNS3/dynamips.git
+cmake -S dynamips -B dynamips/build
+cmake --build dynamips/build -j2
+sudo cmake --install dynamips/build
