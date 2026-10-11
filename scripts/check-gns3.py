@@ -150,10 +150,10 @@ def main():
                 return consoles[key].run(command)
 
             def router(i, command):
-                return run(f"router_dogadinm-{i}", command)
+                return run(f"router_mdogadin-{i}", command)
 
             def host(i, command):
-                return run(f"host_dogadinm-{i}", command)
+                return run(f"host_mdogadin-{i}", command)
 
             def ready():
                 for key in consoles:
@@ -182,21 +182,23 @@ def main():
                     table = router(i, "vtysh -c 'show bgp l2vpn evpn route'")
                     assert "[2]:[0]:" not in table, table
                 print("PASS: OSPF, dynamic RR clients, EVPN type 3 before hosts; no type 2", flush=True)
-                for n in nodes:
-                    if n["name"].startswith("host_"): start(n)
-                connect()
-                # Prove MAC-only EVPN learning without assigning host IPs.
+                # Start one host at a time. The P3 host startup scripts assign no IP.
+                macs = []
                 for i in (1, 2, 3):
-                    host(i, "ip addr flush dev eth0; arping -D -I eth0 -c 2 192.168.10.254 >/dev/null")
-                macs = [host(i, "cat /sys/class/net/eth0/address").strip().splitlines()[-1] for i in (1, 2, 3)]
+                    start(by_name[f"host_mdogadin-{i}"])
+                    connect()
+                    host(i, "test -z \"$(ip -o -4 addr show dev eth0)\"")
+                    host(i, "arping -D -I eth0 -c 2 192.168.10.254 >/dev/null")
+                    mac = host(i, "cat /sys/class/net/eth0/address").strip().splitlines()[-1]
+                    macs.append(mac)
 
-                def mac_routes():
-                    for i in (1, 2, 3, 4):
-                        table = router(i, "vtysh -c 'show bgp l2vpn evpn route'")
-                        for mac in macs: assert mac in table, table
-                retry(mac_routes)
+                    def mac_routes():
+                        for router_number in (1, 2, 3, 4):
+                            table = router(router_number, "vtysh -c 'show bgp l2vpn evpn route'")
+                            for learned_mac in macs: assert learned_mac in table, table
+                    retry(mac_routes)
                 print("PASS: MAC-only type 2 routes propagated by RR without host IPs", flush=True)
-                for i in (1, 2, 3): host(i, "sh /etc/network/lab.sh")
+                for i in (1, 2, 3): host(i, f"ip addr replace 192.168.10.{i}/24 dev eth0")
             else:
                 for n in nodes: start(n)
                 connect()
@@ -244,6 +246,8 @@ def main():
             api("POST", base + "/nodes/start")
             connect()
             retry(ready)
+            if name == "P3":
+                for i in (1, 2, 3): host(i, f"ip addr replace 192.168.10.{i}/24 dev eth0")
             retry(connectivity)
             print(f"PASS: {name} stop/start restores configuration automatically", flush=True)
             for c in consoles.values(): c.close()

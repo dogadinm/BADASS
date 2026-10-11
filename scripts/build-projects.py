@@ -25,7 +25,7 @@ def build(name, part, mode=None):
     def node(kind, number, x, y):
         key = f"{kind}{number}"
         obj = copy.deepcopy(templates[kind])
-        obj.update(node_id=uid(name + key), name=f"{kind}_dogadinm-{number}", x=x, y=y)
+        obj.update(node_id=uid(name + key), name=f"{kind}_mdogadin-{number}", x=x, y=y)
         obj["label"]["text"] = obj["name"]
         obj["console"] = None
         props = obj["properties"]
@@ -79,9 +79,9 @@ def build(name, part, mode=None):
             node("host", i, x, 200)
             link(f"router{i}", 1, f"host{i}", 0)
         switch = {
-            "node_id": uid(name + "switch"), "name": "switch_dogadinm-1",
+            "node_id": uid(name + "switch"), "name": "switch_mdogadin-1",
             "node_type": "ethernet_switch", "compute_id": "local", "x": 0, "y": -170,
-            "symbol": ":/symbols/ethernet_switch.svg", "label": {"text": "switch_dogadinm-1", "x": 0, "y": -30},
+            "symbol": ":/symbols/ethernet_switch.svg", "label": {"text": "switch_mdogadin-1", "x": 0, "y": -30},
             "properties": {"ports_mapping": [{"name": f"Ethernet{i}", "port_number": i, "type": "access", "vlan": 1} for i in range(2)]},
         }
         project["topology"]["nodes"].append(switch)

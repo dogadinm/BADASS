@@ -1,6 +1,6 @@
 #!/bin/sh
 set -eu
-# Host overlay address; 1450 leaves room for the VXLAN/UDP/IPv4 header.
+# Start without an IP address; assign 192.168.10.3/24 before the ping stage.
 ip link set eth0 mtu 1450
 ip link set eth0 up
-ip addr replace 192.168.10.3/24 dev eth0
+ip -4 addr flush dev eth0

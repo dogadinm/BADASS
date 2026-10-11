@@ -30,12 +30,12 @@
                 "label": {
                     "rotation": 0,
                     "style": null,
-                    "text": "host_dogadinm-1",
+                    "text": "host_mdogadin-1",
                     "x": null,
                     "y": -40
                 },
                 "locked": false,
-                "name": "host_dogadinm-1",
+                "name": "host_mdogadin-1",
                 "node_id": "6f94f35c-c9ef-47fc-816f-2df3b417f9a1",
                 "node_type": "docker",
                 "port_name_format": "Ethernet{0}",
@@ -73,12 +73,12 @@
                 "label": {
                     "rotation": 0,
                     "style": null,
-                    "text": "router_dogadinm-1",
+                    "text": "router_mdogadin-1",
                     "x": null,
                     "y": -32
                 },
                 "locked": false,
-                "name": "router_dogadinm-1",
+                "name": "router_mdogadin-1",
                 "node_id": "6baebba6-d41b-4f86-9fad-99b08dee77f1",
                 "node_type": "docker",
                 "port_name_format": "Ethernet{0}",

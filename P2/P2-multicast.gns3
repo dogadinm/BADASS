@@ -1,1 +1,291 @@
-{"auto_close": true, "auto_open": false, "auto_start": false, "drawing_grid_size": 25, "grid_size": 75, "name": "P2-multicast", "project_id": "2de0d8ac-e648-4901-b4e9-140a36133c37", "revision": 9, "scene_height": 1000, "scene_width": 2000, "show_grid": false, "show_interface_labels": false, "show_layers": false, "snap_to_grid": false, "supplier": null, "topology": {"computes": [], "drawings": [], "links": [{"filters": {}, "link_id": "d0786da5-0f34-45ed-930f-b4120c3ee32b", "link_style": {}, "nodes": [{"adapter_number": 1, "label": {"style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;", "text": "1/0"}, "node_id": "964aafff-32df-41e8-a3de-cd9478059693", "port_number": 0}, {"adapter_number": 0, "label": {"style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;", "text": "0/0"}, "node_id": "8db4737d-9c10-4556-8887-f9da8f931b11", "port_number": 0}], "suspend": false}, {"filters": {}, "link_id": "66214fa5-b0ac-420c-a6cf-25739b54f9c5", "link_style": {}, "nodes": [{"adapter_number": 1, "label": {"style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;", "text": "1/0"}, "node_id": "28e4aa52-c625-473a-8947-08751fe71dbe", "port_number": 0}, {"adapter_number": 0, "label": {"style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;", "text": "0/0"}, "node_id": "ec06228c-8093-4e45-ab76-41321b469a48", "port_number": 0}], "suspend": false}, {"filters": {}, "link_id": "1142e583-2eda-4ba4-ae50-ef8482b459b2", "link_style": {}, "nodes": [{"adapter_number": 0, "label": {"style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;", "text": "0/0"}, "node_id": "a7b9b363-e7cc-4f2e-896c-28c2c19162cc", "port_number": 0}, {"adapter_number": 0, "label": {"style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;", "text": "0/0"}, "node_id": "964aafff-32df-41e8-a3de-cd9478059693", "port_number": 0}], "suspend": false}, {"filters": {}, "link_id": "e350997e-1202-45dd-93c1-b6204afba938", "link_style": {}, "nodes": [{"adapter_number": 0, "label": {"style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;", "text": "0/1"}, "node_id": "a7b9b363-e7cc-4f2e-896c-28c2c19162cc", "port_number": 1}, {"adapter_number": 0, "label": {"style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;", "text": "0/0"}, "node_id": "28e4aa52-c625-473a-8947-08751fe71dbe", "port_number": 0}], "suspend": false}], "nodes": [{"compute_id": "local", "console": 5000, "console_auto_start": false, "console_type": "telnet", "custom_adapters": [], "first_port_name": null, "height": 45, "label": {"rotation": 0, "style": null, "text": "router_dogadinm-1", "x": null, "y": -32}, "locked": false, "name": "router_dogadinm-1", "node_id": "964aafff-32df-41e8-a3de-cd9478059693", "node_type": "docker", "port_name_format": "Ethernet{0}", "port_segment_size": 0, "properties": {"adapters": 3, "aux": 5001, "console_http_path": "/", "console_http_port": 80, "console_resolution": "1024x768", "container_id": "4b87b9bfc0d48a917fdf171764384fd7f1bafd71f8eeef23edf740f77ac3041c", "environment": null, "extra_hosts": null, "extra_volumes": [], "image": "badass-router:p1", "mac_address": "02:42:4a:af:ff:00", "start_command": "/bin/sh /etc/network/start.sh", "usage": ""}, "symbol": ":/symbols/router.svg", "template_id": null, "width": 66, "x": -220, "y": 0, "z": 1}, {"compute_id": "local", "console": 5002, "console_auto_start": false, "console_type": "telnet", "custom_adapters": [], "first_port_name": null, "height": 59, "label": {"rotation": 0, "style": null, "text": "host_dogadinm-1", "x": null, "y": -40}, "locked": false, "name": "host_dogadinm-1", "node_id": "8db4737d-9c10-4556-8887-f9da8f931b11", "node_type": "docker", "port_name_format": "Ethernet{0}", "port_segment_size": 0, "properties": {"adapters": 1, "aux": 5003, "console_http_path": "/", "console_http_port": 80, "console_resolution": "1024x768", "container_id": "63718a2e65dce9ec98ae02af6eb40885cbc4e103328600b3a5f5baeb8654ace4", "environment": null, "extra_hosts": null, "extra_volumes": [], "image": "badass-host:p1", "mac_address": "02:42:b4:73:7d:00", "start_command": "/bin/sh /etc/network/start.sh", "usage": ""}, "symbol": ":/symbols/computer.svg", "template_id": null, "width": 65, "x": -220, "y": 200, "z": 1}, {"compute_id": "local", "console": 5004, "console_auto_start": false, "console_type": "telnet", "custom_adapters": [], "first_port_name": null, "height": 45, "label": {"rotation": 0, "style": null, "text": "router_dogadinm-2", "x": null, "y": -32}, "locked": false, "name": "router_dogadinm-2", "node_id": "28e4aa52-c625-473a-8947-08751fe71dbe", "node_type": "docker", "port_name_format": "Ethernet{0}", "port_segment_size": 0, "properties": {"adapters": 3, "aux": 5005, "console_http_path": "/", "console_http_port": 80, "console_resolution": "1024x768", "container_id": "017f7774e37e0a1b5e120d9851dc50bff0fd60123753217f8d134769228d5487", "environment": null, "extra_hosts": null, "extra_volumes": [], "image": "badass-router:p1", "mac_address": "02:42:e4:aa:52:00", "start_command": "/bin/sh /etc/network/start.sh", "usage": ""}, "symbol": ":/symbols/router.svg", "template_id": null, "width": 66, "x": 220, "y": 0, "z": 1}, {"compute_id": "local", "console": 5006, "console_auto_start": false, "console_type": "telnet", "custom_adapters": [], "first_port_name": null, "height": 59, "label": {"rotation": 0, "style": null, "text": "host_dogadinm-2", "x": null, "y": -40}, "locked": false, "name": "host_dogadinm-2", "node_id": "ec06228c-8093-4e45-ab76-41321b469a48", "node_type": "docker", "port_name_format": "Ethernet{0}", "port_segment_size": 0, "properties": {"adapters": 1, "aux": 5007, "console_http_path": "/", "console_http_port": 80, "console_resolution": "1024x768", "container_id": "3d87635f07d9de4df61b0f4e3f59595b20f3357ebed0aadcc6b24bfda9b6ee09", "environment": null, "extra_hosts": null, "extra_volumes": [], "image": "badass-host:p1", "mac_address": "02:42:06:22:8c:00", "start_command": "/bin/sh /etc/network/start.sh", "usage": ""}, "symbol": ":/symbols/computer.svg", "template_id": null, "width": 65, "x": 220, "y": 200, "z": 1}, {"compute_id": "local", "console": 5008, "console_auto_start": false, "console_type": "none", "custom_adapters": [], "first_port_name": null, "height": 32, "label": {"text": "switch_dogadinm-1", "x": 0, "y": -30}, "locked": false, "name": "switch_dogadinm-1", "node_id": "a7b9b363-e7cc-4f2e-896c-28c2c19162cc", "node_type": "ethernet_switch", "port_name_format": "Ethernet{0}", "port_segment_size": 0, "properties": {"ports_mapping": [{"name": "Ethernet0", "port_number": 0, "type": "access", "vlan": 1}, {"name": "Ethernet1", "port_number": 1, "type": "access", "vlan": 1}]}, "symbol": ":/symbols/ethernet_switch.svg", "template_id": null, "width": 72, "x": 0, "y": -170, "z": 1}]}, "type": "topology", "variables": null, "version": "2.2.55", "zoom": 100}
+{
+    "auto_close": true,
+    "auto_open": false,
+    "auto_start": false,
+    "drawing_grid_size": 25,
+    "grid_size": 75,
+    "name": "P2-multicast",
+    "project_id": "f4393a40-3cc8-534d-8bb2-582cc473b4ce",
+    "revision": 9,
+    "scene_height": 1000,
+    "scene_width": 2000,
+    "show_grid": false,
+    "show_interface_labels": false,
+    "show_layers": false,
+    "snap_to_grid": false,
+    "supplier": null,
+    "topology": {
+        "computes": [],
+        "drawings": [],
+        "links": [
+            {
+                "link_id": "52096edc-7066-5272-8e73-4c7aca438db2",
+                "nodes": [
+                    {
+                        "node_id": "425e8471-9a44-5226-9f4d-c3b4457da340",
+                        "adapter_number": 1,
+                        "port_number": 0
+                    },
+                    {
+                        "node_id": "b8132664-c91f-5e0a-b0da-64e423005c0b",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    }
+                ]
+            },
+            {
+                "link_id": "428f82c1-1615-5c9a-8cc6-1df74759c5c7",
+                "nodes": [
+                    {
+                        "node_id": "f5671dbe-2787-504d-b0dd-21ccf67046dc",
+                        "adapter_number": 1,
+                        "port_number": 0
+                    },
+                    {
+                        "node_id": "0fe09bbe-2c44-5bce-b174-eea5f9202018",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    }
+                ]
+            },
+            {
+                "link_id": "c6cfbb52-558e-5298-88de-832def8d70f7",
+                "nodes": [
+                    {
+                        "node_id": "6da66b9c-3aea-5a43-9d31-16c2122d7ac5",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    },
+                    {
+                        "node_id": "425e8471-9a44-5226-9f4d-c3b4457da340",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    }
+                ]
+            },
+            {
+                "link_id": "b2b31306-c5d5-5668-81ee-d1d53068587b",
+                "nodes": [
+                    {
+                        "node_id": "6da66b9c-3aea-5a43-9d31-16c2122d7ac5",
+                        "adapter_number": 0,
+                        "port_number": 1
+                    },
+                    {
+                        "node_id": "f5671dbe-2787-504d-b0dd-21ccf67046dc",
+                        "adapter_number": 0,
+                        "port_number": 0
+                    }
+                ]
+            }
+        ],
+        "nodes": [
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_auto_start": false,
+                "console_type": "telnet",
+                "custom_adapters": [],
+                "first_port_name": null,
+                "height": 45,
+                "label": {
+                    "rotation": 0,
+                    "style": null,
+                    "text": "router_mdogadin-1",
+                    "x": null,
+                    "y": -32
+                },
+                "locked": false,
+                "name": "router_mdogadin-1",
+                "node_id": "425e8471-9a44-5226-9f4d-c3b4457da340",
+                "node_type": "docker",
+                "port_name_format": "Ethernet{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "adapters": 3,
+                    "aux": null,
+                    "console_http_path": "/",
+                    "console_http_port": 80,
+                    "console_resolution": "1024x768",
+                    "container_id": null,
+                    "environment": null,
+                    "extra_hosts": null,
+                    "extra_volumes": [],
+                    "image": "badass-router:p1",
+                    "mac_address": null,
+                    "start_command": "/bin/sh /etc/network/start.sh",
+                    "usage": ""
+                },
+                "symbol": ":/symbols/router.svg",
+                "template_id": null,
+                "width": 66,
+                "x": -220,
+                "y": 0,
+                "z": 1
+            },
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_auto_start": false,
+                "console_type": "telnet",
+                "custom_adapters": [],
+                "first_port_name": null,
+                "height": 59,
+                "label": {
+                    "rotation": 0,
+                    "style": null,
+                    "text": "host_mdogadin-1",
+                    "x": null,
+                    "y": -40
+                },
+                "locked": false,
+                "name": "host_mdogadin-1",
+                "node_id": "b8132664-c91f-5e0a-b0da-64e423005c0b",
+                "node_type": "docker",
+                "port_name_format": "Ethernet{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "adapters": 1,
+                    "aux": null,
+                    "console_http_path": "/",
+                    "console_http_port": 80,
+                    "console_resolution": "1024x768",
+                    "container_id": null,
+                    "environment": null,
+                    "extra_hosts": null,
+                    "extra_volumes": [],
+                    "image": "badass-host:p1",
+                    "mac_address": null,
+                    "start_command": "/bin/sh /etc/network/start.sh",
+                    "usage": ""
+                },
+                "symbol": ":/symbols/computer.svg",
+                "template_id": null,
+                "width": 65,
+                "x": -220,
+                "y": 200,
+                "z": 1
+            },
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_auto_start": false,
+                "console_type": "telnet",
+                "custom_adapters": [],
+                "first_port_name": null,
+                "height": 45,
+                "label": {
+                    "rotation": 0,
+                    "style": null,
+                    "text": "router_mdogadin-2",
+                    "x": null,
+                    "y": -32
+                },
+                "locked": false,
+                "name": "router_mdogadin-2",
+                "node_id": "f5671dbe-2787-504d-b0dd-21ccf67046dc",
+                "node_type": "docker",
+                "port_name_format": "Ethernet{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "adapters": 3,
+                    "aux": null,
+                    "console_http_path": "/",
+                    "console_http_port": 80,
+                    "console_resolution": "1024x768",
+                    "container_id": null,
+                    "environment": null,
+                    "extra_hosts": null,
+                    "extra_volumes": [],
+                    "image": "badass-router:p1",
+                    "mac_address": null,
+                    "start_command": "/bin/sh /etc/network/start.sh",
+                    "usage": ""
+                },
+                "symbol": ":/symbols/router.svg",
+                "template_id": null,
+                "width": 66,
+                "x": 220,
+                "y": 0,
+                "z": 1
+            },
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_auto_start": false,
+                "console_type": "telnet",
+                "custom_adapters": [],
+                "first_port_name": null,
+                "height": 59,
+                "label": {
+                    "rotation": 0,
+                    "style": null,
+                    "text": "host_mdogadin-2",
+                    "x": null,
+                    "y": -40
+                },
+                "locked": false,
+                "name": "host_mdogadin-2",
+                "node_id": "0fe09bbe-2c44-5bce-b174-eea5f9202018",
+                "node_type": "docker",
+                "port_name_format": "Ethernet{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "adapters": 1,
+                    "aux": null,
+                    "console_http_path": "/",
+                    "console_http_port": 80,
+                    "console_resolution": "1024x768",
+                    "container_id": null,
+                    "environment": null,
+                    "extra_hosts": null,
+                    "extra_volumes": [],
+                    "image": "badass-host:p1",
+                    "mac_address": null,
+                    "start_command": "/bin/sh /etc/network/start.sh",
+                    "usage": ""
+                },
+                "symbol": ":/symbols/computer.svg",
+                "template_id": null,
+                "width": 65,
+                "x": 220,
+                "y": 200,
+                "z": 1
+            },
+            {
+                "node_id": "6da66b9c-3aea-5a43-9d31-16c2122d7ac5",
+                "name": "switch_mdogadin-1",
+                "node_type": "ethernet_switch",
+                "compute_id": "local",
+                "x": 0,
+                "y": -170,
+                "symbol": ":/symbols/ethernet_switch.svg",
+                "label": {
+                    "text": "switch_mdogadin-1",
+                    "x": 0,
+                    "y": -30
+                },
+                "properties": {
+                    "ports_mapping": [
+                        {
+                            "name": "Ethernet0",
+                            "port_number": 0,
+                            "type": "access",
+                            "vlan": 1
+                        },
+                        {
+                            "name": "Ethernet1",
+                            "port_number": 1,
+                            "type": "access",
+                            "vlan": 1
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "type": "topology",
+    "variables": null,
+    "version": "2.2.55",
+    "zoom": 100
+}
