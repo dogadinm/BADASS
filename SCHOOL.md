@@ -218,3 +218,6 @@ Underlay/overlay, VXLAN/VNI/VTEP, `br0` и MAC/FDB, static против multicas
 зачем MTU 1450, OSPF для loopback, iBGP/Route Reflector, EVPN type 2 и type 3,
 почему хостам в одной L2-подсети не нужен шлюз. Термины привязать к выводу
 команд и реальному захвату пакетов, а не только выучить определения.
+
+
+sudo apt install pipx python3-pyqt6 python3-pyqt6.qtsvg python3-pyqt6.qtwebsockets busybox-static
