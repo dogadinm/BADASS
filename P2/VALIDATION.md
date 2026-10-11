@@ -1,5 +1,8 @@
 # P2 validation — 2026-09-12
 
+Historical report. P2 portable projects have since been added, with automatic
+startup configuration. Current results: [CHECKS.md](../CHECKS.md).
+
 Command: `sh P2/scripts/check.sh` — **PASS**, exit code 0.
 Environment: Docker Desktop on macOS, Linux containers, `linux/amd64`.
 

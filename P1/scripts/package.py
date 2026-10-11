@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Add Docker base images to a real GNS3 portable export (GNS3 skips them)."""
+"""Add shared P1 Docker images to a P1/P2/P3 GNS3 portable export."""
 import argparse
 import json
 from pathlib import Path
@@ -17,7 +17,7 @@ def main():
         project = json.loads(source.read("project.gns3"))
         tags = sorted({node["properties"]["image"] for node in project["topology"]["nodes"] if node["node_type"] == "docker"})
         if tags != ["badass-host:p1", "badass-router:p1"]:
-            parser.error("Expected exactly badass-host:p1 and badass-router:p1 in P1")
+            parser.error("Expected the shared badass-host:p1 and badass-router:p1 images")
         metadata = json.loads(subprocess.check_output(["docker", "image", "inspect", *tags]))
         if any(image["Architecture"] != "amd64" or image["Os"] != "linux" for image in metadata):
             parser.error("Build both images for linux/amd64 before packaging for school")

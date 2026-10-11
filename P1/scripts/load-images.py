@@ -18,4 +18,4 @@ with zipfile.ZipFile(args.archive) as archive:
                 process.stdin.close()
             if process.wait() != 0:
                 raise SystemExit("docker image load failed")
-print("Images loaded. Import P1.gns3project in GNS3 on this VM.")
+print(f"Images loaded. Import {args.archive.name} in GNS3 on this VM.")

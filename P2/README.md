@@ -2,6 +2,22 @@
 
 This directory prepares both required P2 variants: a **static VXLAN** and a **dynamic multicast VXLAN**. The subject requires **VNI 10**, a Linux bridge named **`br0`**, configuration files with comments, and consistent equipment names containing a group member's login.
 
+## Ready-to-import projects
+
+- `P2.gns3project`: static VXLAN.
+- `P2-multicast.gns3project`: multicast VXLAN.
+
+Both archives include the shared P1 Docker images and persistent per-node
+configuration. Load the images once with `python3 P1/scripts/load-images.py`,
+then use **File → Import portable project** in GNS3. Network settings are
+applied automatically on every start by `/etc/network/start.sh`. Import the
+archives, not just the `.gns3` JSON files: the archives also contain configs.
+See [SCHOOL.md](../SCHOOL.md) for the Linux x86_64 walkthrough and
+[CHECKS.md](../CHECKS.md) for current validation.
+
+The manual steps below explain how to reconstruct or change the topology.
+They are not needed to start the supplied portable projects.
+
 ## GNS3 topology
 
 Build this topology with the [P1 Docker images](../P1/README.md):
@@ -104,7 +120,9 @@ A successful host-to-host ping should produce VXLAN/UDP traffic on the router un
 
 ## 2. Multicast VXLAN
 
-Reset/restart the nodes before switching variants, then run the scripts from `multicast/`. Both VTEPs join multicast group `239.1.1.1`; there is no per-peer `remote` address.
+Use the separate `P2-multicast.gns3project` for a persistent multicast setup.
+For a temporary manual switch, run the scripts from `multicast/`; a restart
+restores the mode saved in that project. Both VTEPs join multicast group `239.1.1.1`; there is no per-peer `remote` address.
 
 Verify:
 
