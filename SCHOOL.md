@@ -221,3 +221,8 @@ Underlay/overlay, VXLAN/VNI/VTEP, `br0` и MAC/FDB, static против multicas
 
 
 sudo apt install pipx python3-pyqt6 python3-pyqt6.qtsvg python3-pyqt6.qtwebsockets busybox-static
+
+pipx install 'gns3-server==2.2.55'
+pipx install 'gns3-gui==2.2.55'
+pipx inject gns3-gui 'gns3-server==2.2.55' PyQt6
+gns3server --version
